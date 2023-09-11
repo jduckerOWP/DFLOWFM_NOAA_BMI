@@ -15,6 +15,19 @@ Author: Jason Ducker, Lynker Technologies LLC., Affiliate for Office of Water Pr
 8. petsc >= 3.19
 9. metis >= 5.1
 
+# Top directory structure
+src/ = DFLOWFM model engine source code 
+build.sh = Cmake compilation and build script for DFLOWFM source code
+BMI_build/ = Directory where BMI source code, BMI driver cmake build, and BMI driver source code is located for current DFLOWFM BMI build. 
+
+# BMI directory structure
+BMI/ = Directory where BMI shared library source code is located
+src/ = Directory where BMI driver source code is located
+dflowfm_install = Directory where the user will place DFLOWFM model engine compiled libraries and modules required to link and build BMI shared libraries and driver
+iso_c_fortran_bmi = Directory where BMI Fortran source code is linked for compiling C+ pointer functions within BMI shared library.
+CMakeLists.txt, namelist.input = Files for compiling DFLOWFM BMI shared libraries and driver using CMake and the required "BMI config" file for DFLOWFM respectively.
+dflowfm_source.sh = shell script for loading and linking DFLOWFM required libraries to build model source code and the BMI shared libraries.
+
 # Steps below to compile DFlowFM model source code
 1. Unpack DFlowFM source code. Go into directory and open the build.sh file. Go to lines 190-192 and change the following syntax to compile the DFLOWFM model engine source code only: config="dflowfm", generator="Unix Makefiles", compiler="intel21"
 2. Go into "src" directory, and edit the "setenv.sh" file to essentially load and link your library paths that are required to compile DFlowFM source code as stated above. *** The current setenv.sh file is already set for the RDHPCS NOAA Hera cluster, so if you're compiling it on there you dont need to change it ***
