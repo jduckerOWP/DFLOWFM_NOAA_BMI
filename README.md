@@ -15,6 +15,10 @@ Author: Jason Ducker, Lynker Technologies LLC., Affiliate for Office of Water Pr
 8. petsc >= 3.19
 9. metis >= 5.1
 
+# DFlowFM Documentation and Model Setup
+For infromation about DFlowFM model engine physics, file descriptions, and model setups for a given simulation; please refer to Deltares reference manual link below:
+https://content.oss.deltares.nl/delft3d/D-Flow_FM_User_Manual.pdf
+
 # Top directory structure
 src/ = DFLOWFM model engine source code 
 build.sh = Cmake compilation and build script for DFLOWFM source code
